@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>SHARAD MISHRA ADVOCATE</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5dc; /* Light cream background for the entire page */
+        }
+        #header {
+            background-color: #336699;
+            color: #fff;
+            text-align: center;
+            padding: 30px 0;
+        }
+        #logo {
+            display: block;
+            margin: 0 auto;
+            width: 500px; /* Adjust the size as needed */
+        }
+        #nav {
+            text-align: center;
+            background-color: #f5f5dc;
+            padding: 10px 0;
+        }
+        #nav a {
+            text-decoration: none;
+            color: #336699;
+            margin: 0 20px;
+        }
+        
+        #contact {
+            text-align: center;
+            margin-top: 20px;
+        }
+        #about-hero {
+            background-image: url('tingey-injury-law-firm-nSpj-Z12lX0-unsplash.jpg'); /* Add the path to your image */
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+            text-align: left;
+            padding: 150px 0;
+        }
+        #about-hero-text {
+            font-size: 25px;
+            margin-left: 50px;
+        }
+        #about-content {
+            display: flex;
+            align-items: center;
+            padding: 20px;
+            background-color: #f5f5dc; /* Light cream background for About Us */
+        }
+        #about-photo {
+            flex: 1;
+        }
+        #about-text {
+            flex: 2;
+            font-size: 24px;
+            padding-left: 80px;
+            padding-right: 80px;
+        }
+        #services {
+            background-color: #f5f5dc; /* Light cream background for Services */
+            padding: 20px;
+        }
+        .service-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .service-text {
+            flex: 2;
+            font-size: 24px;
+            padding-left: 80px;
+            padding-right: 80px;
+        }
+        .service-photo {
+            padding-top: 20px;
+            flex: 1;
+        }
+        #areas {
+            background-color: #f5f5dc; /* Light cream background for Areas of Practice */
+            padding: 20px;
+        }
+        #contact {
+            background-color: #f5f5dc; /* Light cream background for Contact Us */
+            padding: 20px;
+            text-align: center;
+            font-size: 24px;
+        }
+
+        .whatsapp_float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 40px;
+            right: 40px;
+            background-color: #25d366;
+            color: #fff;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 3px #999;
+            z-index: 100;
+        }
+        .whatsapp-icon {
+            margin-top: 16px;
+        }
+
+        /* for mobile */
+        @media screen and (max-width: 767px){
+            .whatsapp-icon {
+                margin-top: 10px;
+            }
+            .whatsapp_float {
+                width: 40px;
+                height: 40px;
+                bottom: 20px;
+                right: 10px;
+                font-size: 22px;
+            }
+        }
+        
+        /* New Section Style */
+        .new-section {
+            display: flex;
+            align-items: center;
+            padding: 20px;
+            background-color: #f5f5dc; /* Light cream background for the new section */
+        }
+        .section-photo {
+            flex: 1;
+        }
+        .section-text {
+            flex: 2;
+            font-size: 24px;
+            padding-left: 80px;
+            padding-right: 80px;
+        }
+
+        #overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black overlay */
+            z-index: 9999;
+            font-size: 19px;
+        }
+
+        #popup-content {
+            position: absolute;
+            top: 25%; /* Adjust the top position to center vertically in 1/4th of the screen */
+            left: 25%; /* Adjust the left position to center horizontally in 1/4th of the screen */
+            width: 50%; /* Adjust the width to cover 1/4th of the screen */
+            height: 50%; /* Adjust the height to cover 1/4th of the screen */
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        #acceptBtn, #declineBtn {
+    padding: 10px 20px;
+    margin: 10px; /* Add margin to separate the buttons */
+    cursor: pointer;
+    display: inline-block; /* Display the buttons inline */
+}
+#popup-buttons {
+    text-align: center; /* Center the buttons horizontally within the popup */
+    position: absolute;
+    bottom: 20px; /* Adjust the bottom position to center vertically within the popup */
+    width: 100%; /* Make the button container full width */
+}
+
+#acceptBtn {
+    padding: 10px 20px;
+    margin: 10px;
+    cursor: pointer;
+    display: inline-block;
+    background-color: #4CAF50; /* Green color for the Accept button */
+    color: #fff; /* White text color */
+    border: none; /* Remove the border */
+    border-radius: 5px; /* Rounded corners */
+}
+
+#declineBtn {
+    padding: 10px 20px;
+    margin: 10px;
+    cursor: pointer;
+    display: inline-block;
+    background-color: #FF5733; /* Red color for the Decline button */
+    color: #fff; /* White text color */
+    border: none; /* Remove the border */
+    border-radius: 5px; /* Rounded corners */
+}
+
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+
+</head>
+<body>
+
+ <!-- Quarter-screen overlay -->
+ <div id="overlay">
+    <div id="popup-content">
+        <img src="logo-no-background.png" alt="Popup Image" style="max-width: 100%; height: auto; margin: auto;">
+        <p>Disclaimer : As per the rules of the Bar Council of India, we are not permitted to solicit work and advertise. By visiting the website, the user acknowledges that the information provided on this website is solely available for informational purposes only sought to be voluntarily gained by him/her and is neither soliciting nor advertisement. Further, the information provided on this website is accessed by the user’s own volition, and any transmission, receipt or use of this information available on this website does not create any liability or any relationship with us.</p>
+        <div id="popup-buttons">
+            <button id="acceptBtn">Accept</button>
+            <button id="declineBtn">Decline</button>
+        </div>
+        
+    </div>
+</div>
+
+    <div id="header">
+        <img id="logo" src="logo-no-background.png" alt="Your Logo">
+    </div>
+    <div id="nav">
+        <a href="#about">About Us</a>
+        <a href="#services">Services</a>
+        <a href="#areas">Areas of Practice</a>
+        <a href="#contact">Contact Us</a>
+    </div>
+    <div id="about-hero">
+        <div id="about-hero-text">
+        </div>
+    </div>
+    <div id="content">
+        <section id="about">
+            <h1>About Us</h1>
+            <hr>
+            <div id="about-content">
+                <div id="about-photo">
+                    <img src="Screenshot_2023-09-30-09-13-23-465_com.facebook.katana.jpg" alt="My Image" style="max-width: 100%; height: auto;">
+                </div>
+                <div id="about-text">
+                    <!-- Add your About Us content here -->
+                    <p>
+                        A lawyer, often regarded as a legal advocate or counsel, is a highly trained professional in the field of law and justice. Lawyers are not merely individuals who navigate the intricate web of legal statutes, but they serve as guardians of the principles upon which our societies are built: justice, fairness, and the rule of law. These dedicated individuals are often called upon to represent clients in legal matters, whether in a courtroom, during negotiations, or in advisory roles. Beyond their mastery of the law, lawyers possess the unique ability to listen, empathize, and provide solutions to complex legal problems, making them essential in ensuring that the rights of individuals and organizations are protected, disputes are resolved, and justice is served. In their pursuit of justice, lawyers play a pivotal role in upholding the foundations of a just and equitable society.</p>
+                </div>
+            </div>
+        </section>
+        <hr>
+        <section id="services">
+            <h1>Services</h1>
+            <hr>
+            <div class="service-item">
+                <div class="service-text">
+                    <!-- Add your Services content here -->
+                    <p>Legal services encompass a broad spectrum of offerings provided by legal professionals to individuals, businesses, and organizations. These services are essential for ensuring compliance with laws, protecting rights, resolving disputes, and upholding justice. Law firms and legal practitioners specialize in various areas, such as criminal law, civil litigation, family law, intellectual property, corporate law, and more, catering to diverse legal needs. Whether it's advising clients on complex legal matters, representing them in court, drafting legal documents, or negotiating settlements, legal services play a pivotal role in safeguarding the rule of law and maintaining societal order. In an ever-evolving legal landscape, these services are crucial for navigating the complexities of the legal system and safeguarding the rights and interests of clients.</p>
+                </div>
+                <div class="service-photo">
+                    <img src="pexels-photo-6077123.jpg" alt="Service Image 1" style="max-width: 100%; height: auto;">
+                </div>
+            </div>
+        </section>
+        <hr>
+        <section id="areas">
+            <h2>Areas of Practice</h2>
+            <hr>
+            <!-- Add your Areas of Practice content here -->
+        </section>
+        <!-- New Section -->
+        <section class="new-section">
+            <div class="section-photo">
+                <img src="writing-desk-8280356.jpg" alt="New Section Image" style="max-width: 100%; height: auto;">
+            </div>
+            <div class="section-text">
+                <!-- Add your content for the new section here -->
+                <p>The field of law encompasses a diverse range of practice areas, each focused on specific aspects of legal expertise and application. These practice areas serve to address the multifaceted needs of individuals, businesses, and society as a whole. Some prominent areas of legal practice include criminal law, where attorneys represent clients facing criminal charges, aiming to protect their rights and ensure fair treatment within the criminal justice system. In civil law, attorneys assist clients in resolving disputes related to contracts, property, personal injury, and more, often through negotiation, mediation, or litigation. Family law covers matters such as divorce, child custody, and adoption, guiding families through emotionally challenging times. Additionally, areas like corporate law, environmental law, intellectual property law, and immigration law cater to specific industries and legal complexities. The ever-evolving legal landscape continues to spawn new practice areas, reflecting the evolving needs and challenges of modern society, making the field of law both dynamic and essential.
+                </p>
+            </div>
+        </section>
+        <hr>
+        <section id="contact">
+            <h1>Contact Us</h1>
+            
+            <!-- Add your Contact Us content here -->
+            <p>Call us at: <a href="tel:+919837659421">+91 9837659421</a></p>
+            <p>Mail us at: <a href="mailto:sharadmishraadvo@gmail.com">sharadmishraadvo@gmail.com</a></p>
+            <p>Address: 52,State bank officers colony, Bareilly</p>
+            <p><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2074.3588806383646!2d79.41268760020785!3d28.374739246041276!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39a007927ca13129%3A0x5cd9ee276f4cdfde!2sAdvocate%20Sharad%20Mishra!5e0!3m2!1sen!2sin!4v1696052841636!5m2!1sen!2sin" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></p>
+        </section>
+        <hr>
+<h1>Disclaimer</h1>
+<p>Disclaimer : As per the rules of the Bar Council of India, we are not permitted to solicit work and advertise. By visiting the website, the user acknowledges that the information provided on this website is solely available for informational purposes only sought to be voluntarily gained by him/her and is neither soliciting nor advertisement. Further, the information provided on this website is accessed by the user’s own volition, and any transmission, receipt or use of this information available on this website does not create any liability or any relationship with us.</p>
+    </div>
+    <a href="https:/wa.me/919837659421"  target="_blank" class="whatsapp_float"><i class="fa-brands fa-whatsapp whatsapp-icon"></i></a>
+
+    <script>
+        // Get the modal
+        var modal = document.getElementById("overlay");
+
+        // Get the accept and decline buttons
+        var acceptBtn = document.getElementById("acceptBtn");
+        var declineBtn = document.getElementById("declineBtn");
+
+        // When the page loads, show the popup
+        window.onload = function () {
+            modal.style.display = "block";
+        };
+
+        // When the user clicks the accept button, close the popup
+        acceptBtn.onclick = function () {
+            modal.style.display = "none";
+        };
+
+        // When the user clicks the decline button, redirect or close the window (adjust as needed)
+        declineBtn.onclick = function () {
+            // You can redirect the user to another page or simply close the window
+            window.close();
+        };
+    </script>
+
+</body>
+</html>
